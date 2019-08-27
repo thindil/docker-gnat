@@ -14,11 +14,6 @@ RUN apt-get update && apt-get install -y \
  && chmod +x /tmp/gnat-community-2019-20190517-x86_64-linux-bin \
  && /tmp/gnat-community-2019-20190517-x86_64-linux-bin \
    --platform minimal --script /tmp/script.qs \
- && gprinstall --uninstall gpr \
- && gprinstall --uninstall xmlada \
- && gprinstall --uninstall aws \
- && gprinstall --uninstall zfp_native_x86_64 \
- && gprinstall --uninstall gnatcoll \
   ; cd /opt/gnat/lib/gnat/manifests \
   ; rm -f `grep ^[0-9a-f] *|cut -d\  -f2` * \
   ; cd /opt/gnat \
