@@ -9,8 +9,8 @@ RUN apt-get update && apt-get install -y \
  wget \
  make \
  libc-dev \
- && wget "https://community.download.adacore.com/v1/4d99b7b2f212c8efdab2ba8ede474bb9fa15888d?filename=gnat-2020-20200429-x86_64-linux-bin" \
-  --O /tmp/gnat-2020-20200429-x86_64-linux-bin \
+ && wget -q "https://community.download.adacore.com/v1/4d99b7b2f212c8efdab2ba8ede474bb9fa15888d?filename=gnat-2020-20200429-x86_64-linux-bin" \
+  -O /tmp/gnat-2020-20200429-x86_64-linux-bin \
  && chmod +x /tmp/gnat-2020-20200429-x86_64-linux-bin \
  && /tmp/gnat-2020-20200429-x86_64-linux-bin \
    --platform minimal --script /tmp/script.qs \
@@ -20,6 +20,6 @@ RUN apt-get update && apt-get install -y \
   ; rm -rf maintenancetool* share/gps \
  && find /opt/gnat/ -type d -empty -delete \
  && rm -rf /tmp/gnat-2020-20200429-x86_64-linux-bin \
- && apt-get purge -y --auto-remove fontconfig dbus curl libx11-6 libx11-xcb1 \
+ && apt-get purge -y --auto-remove fontconfig dbus wget libx11-6 libx11-xcb1 \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
