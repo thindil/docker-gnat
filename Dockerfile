@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
  curl \
  make \
  libc-dev \
- && curl -sSf "https://community.download.adacore.com/v1/4d99b7b2f212c8efdab2ba8ede474bb9fa15888d?filename=gnat-2020-20200429-x86_64-linux-bin" \
+ && curl -sSf \"https://community.download.adacore.com/v1/4d99b7b2f212c8efdab2ba8ede474bb9fa15888d?filename=gnat-2020-20200429-x86_64-linux-bin\" \
   --output /tmp/gnat-2020-20200429-x86_64-linux-bin \
  && chmod +x /tmp/gnat-2020-20200429-x86_64-linux-bin \
  && /tmp/gnat-2020-20200429-x86_64-linux-bin \
